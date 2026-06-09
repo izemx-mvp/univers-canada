@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
   LayoutDashboard, Users, Briefcase, Calendar, FileText, Receipt,
-  Workflow, Bot, MessageCircle, Mail, BarChart3, Settings, Sparkles, MapleLeafIcon as Leaf,
+  Workflow, Bot, MessageCircle, Mail, BarChart3, Settings, Sparkles,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
