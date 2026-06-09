@@ -12,9 +12,15 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppWorkflowsRouteImport } from './routes/_app.workflows'
+import { Route as AppWhatsappRouteImport } from './routes/_app.whatsapp'
+import { Route as AppStatistiquesRouteImport } from './routes/_app.statistiques'
 import { Route as AppRendezVousRouteImport } from './routes/_app.rendez-vous'
+import { Route as AppParametresRouteImport } from './routes/_app.parametres'
 import { Route as AppLeadsRouteImport } from './routes/_app.leads'
+import { Route as AppIaAssistantRouteImport } from './routes/_app.ia-assistant'
 import { Route as AppFacturationRouteImport } from './routes/_app.facturation'
+import { Route as AppEmailsRouteImport } from './routes/_app.emails'
 import { Route as AppDossiersRouteImport } from './routes/_app.dossiers'
 import { Route as AppDocumentsRouteImport } from './routes/_app.documents'
 import { Route as AppDashboardRouteImport } from './routes/_app.dashboard'
@@ -33,9 +39,29 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppWorkflowsRoute = AppWorkflowsRouteImport.update({
+  id: '/workflows',
+  path: '/workflows',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppWhatsappRoute = AppWhatsappRouteImport.update({
+  id: '/whatsapp',
+  path: '/whatsapp',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppStatistiquesRoute = AppStatistiquesRouteImport.update({
+  id: '/statistiques',
+  path: '/statistiques',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppRendezVousRoute = AppRendezVousRouteImport.update({
   id: '/rendez-vous',
   path: '/rendez-vous',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppParametresRoute = AppParametresRouteImport.update({
+  id: '/parametres',
+  path: '/parametres',
   getParentRoute: () => AppRoute,
 } as any)
 const AppLeadsRoute = AppLeadsRouteImport.update({
@@ -43,9 +69,19 @@ const AppLeadsRoute = AppLeadsRouteImport.update({
   path: '/leads',
   getParentRoute: () => AppRoute,
 } as any)
+const AppIaAssistantRoute = AppIaAssistantRouteImport.update({
+  id: '/ia-assistant',
+  path: '/ia-assistant',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppFacturationRoute = AppFacturationRouteImport.update({
   id: '/facturation',
   path: '/facturation',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppEmailsRoute = AppEmailsRouteImport.update({
+  id: '/emails',
+  path: '/emails',
   getParentRoute: () => AppRoute,
 } as any)
 const AppDossiersRoute = AppDossiersRouteImport.update({
@@ -70,9 +106,15 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof AppDashboardRoute
   '/documents': typeof AppDocumentsRoute
   '/dossiers': typeof AppDossiersRoute
+  '/emails': typeof AppEmailsRoute
   '/facturation': typeof AppFacturationRoute
+  '/ia-assistant': typeof AppIaAssistantRoute
   '/leads': typeof AppLeadsRoute
+  '/parametres': typeof AppParametresRoute
   '/rendez-vous': typeof AppRendezVousRoute
+  '/statistiques': typeof AppStatistiquesRoute
+  '/whatsapp': typeof AppWhatsappRoute
+  '/workflows': typeof AppWorkflowsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -80,9 +122,15 @@ export interface FileRoutesByTo {
   '/dashboard': typeof AppDashboardRoute
   '/documents': typeof AppDocumentsRoute
   '/dossiers': typeof AppDossiersRoute
+  '/emails': typeof AppEmailsRoute
   '/facturation': typeof AppFacturationRoute
+  '/ia-assistant': typeof AppIaAssistantRoute
   '/leads': typeof AppLeadsRoute
+  '/parametres': typeof AppParametresRoute
   '/rendez-vous': typeof AppRendezVousRoute
+  '/statistiques': typeof AppStatistiquesRoute
+  '/whatsapp': typeof AppWhatsappRoute
+  '/workflows': typeof AppWorkflowsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -92,9 +140,15 @@ export interface FileRoutesById {
   '/_app/dashboard': typeof AppDashboardRoute
   '/_app/documents': typeof AppDocumentsRoute
   '/_app/dossiers': typeof AppDossiersRoute
+  '/_app/emails': typeof AppEmailsRoute
   '/_app/facturation': typeof AppFacturationRoute
+  '/_app/ia-assistant': typeof AppIaAssistantRoute
   '/_app/leads': typeof AppLeadsRoute
+  '/_app/parametres': typeof AppParametresRoute
   '/_app/rendez-vous': typeof AppRendezVousRoute
+  '/_app/statistiques': typeof AppStatistiquesRoute
+  '/_app/whatsapp': typeof AppWhatsappRoute
+  '/_app/workflows': typeof AppWorkflowsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -104,9 +158,15 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/documents'
     | '/dossiers'
+    | '/emails'
     | '/facturation'
+    | '/ia-assistant'
     | '/leads'
+    | '/parametres'
     | '/rendez-vous'
+    | '/statistiques'
+    | '/whatsapp'
+    | '/workflows'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -114,9 +174,15 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/documents'
     | '/dossiers'
+    | '/emails'
     | '/facturation'
+    | '/ia-assistant'
     | '/leads'
+    | '/parametres'
     | '/rendez-vous'
+    | '/statistiques'
+    | '/whatsapp'
+    | '/workflows'
   id:
     | '__root__'
     | '/'
@@ -125,9 +191,15 @@ export interface FileRouteTypes {
     | '/_app/dashboard'
     | '/_app/documents'
     | '/_app/dossiers'
+    | '/_app/emails'
     | '/_app/facturation'
+    | '/_app/ia-assistant'
     | '/_app/leads'
+    | '/_app/parametres'
     | '/_app/rendez-vous'
+    | '/_app/statistiques'
+    | '/_app/whatsapp'
+    | '/_app/workflows'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -159,11 +231,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_app/workflows': {
+      id: '/_app/workflows'
+      path: '/workflows'
+      fullPath: '/workflows'
+      preLoaderRoute: typeof AppWorkflowsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/whatsapp': {
+      id: '/_app/whatsapp'
+      path: '/whatsapp'
+      fullPath: '/whatsapp'
+      preLoaderRoute: typeof AppWhatsappRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/statistiques': {
+      id: '/_app/statistiques'
+      path: '/statistiques'
+      fullPath: '/statistiques'
+      preLoaderRoute: typeof AppStatistiquesRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/_app/rendez-vous': {
       id: '/_app/rendez-vous'
       path: '/rendez-vous'
       fullPath: '/rendez-vous'
       preLoaderRoute: typeof AppRendezVousRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/parametres': {
+      id: '/_app/parametres'
+      path: '/parametres'
+      fullPath: '/parametres'
+      preLoaderRoute: typeof AppParametresRouteImport
       parentRoute: typeof AppRoute
     }
     '/_app/leads': {
@@ -173,11 +273,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppLeadsRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/ia-assistant': {
+      id: '/_app/ia-assistant'
+      path: '/ia-assistant'
+      fullPath: '/ia-assistant'
+      preLoaderRoute: typeof AppIaAssistantRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/_app/facturation': {
       id: '/_app/facturation'
       path: '/facturation'
       fullPath: '/facturation'
       preLoaderRoute: typeof AppFacturationRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/emails': {
+      id: '/_app/emails'
+      path: '/emails'
+      fullPath: '/emails'
+      preLoaderRoute: typeof AppEmailsRouteImport
       parentRoute: typeof AppRoute
     }
     '/_app/dossiers': {
@@ -208,18 +322,30 @@ interface AppRouteChildren {
   AppDashboardRoute: typeof AppDashboardRoute
   AppDocumentsRoute: typeof AppDocumentsRoute
   AppDossiersRoute: typeof AppDossiersRoute
+  AppEmailsRoute: typeof AppEmailsRoute
   AppFacturationRoute: typeof AppFacturationRoute
+  AppIaAssistantRoute: typeof AppIaAssistantRoute
   AppLeadsRoute: typeof AppLeadsRoute
+  AppParametresRoute: typeof AppParametresRoute
   AppRendezVousRoute: typeof AppRendezVousRoute
+  AppStatistiquesRoute: typeof AppStatistiquesRoute
+  AppWhatsappRoute: typeof AppWhatsappRoute
+  AppWorkflowsRoute: typeof AppWorkflowsRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
   AppDashboardRoute: AppDashboardRoute,
   AppDocumentsRoute: AppDocumentsRoute,
   AppDossiersRoute: AppDossiersRoute,
+  AppEmailsRoute: AppEmailsRoute,
   AppFacturationRoute: AppFacturationRoute,
+  AppIaAssistantRoute: AppIaAssistantRoute,
   AppLeadsRoute: AppLeadsRoute,
+  AppParametresRoute: AppParametresRoute,
   AppRendezVousRoute: AppRendezVousRoute,
+  AppStatistiquesRoute: AppStatistiquesRoute,
+  AppWhatsappRoute: AppWhatsappRoute,
+  AppWorkflowsRoute: AppWorkflowsRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
