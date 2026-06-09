@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Topbar } from "@/components/Topbar";
 import { rendezVous } from "@/lib/mock-data";
@@ -48,8 +49,8 @@ function RdvPage() {
               </div>
             ))}
             {hours.map((h) => (
-              <>
-                <div key={h} className="bg-card p-2 text-[10px] text-muted-foreground text-right">{h}</div>
+              <Fragment key={h}>
+                <div className="bg-card p-2 text-[10px] text-muted-foreground text-right">{h}</div>
                 {days.map((d, di) => {
                   const hasEvent = (di === 1 && h === "10:00") || (di === 2 && h === "14:00") || (di === 3 && h === "11:00") || (di === 4 && h === "15:00");
                   return (
@@ -62,7 +63,7 @@ function RdvPage() {
                     </div>
                   );
                 })}
-              </>
+              </Fragment>
             ))}
           </div>
         </div>
