@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
   LayoutDashboard, Users, Briefcase, Calendar, FileText, Receipt,
-  Workflow, Bot, MessageCircle, Mail, BarChart3, Settings, Sparkles,
+  Workflow, Bot, BarChart3, Settings, Sparkles,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -14,8 +14,6 @@ const nav = [
   { to: "/facturation", label: "Facturation", icon: Receipt },
   { to: "/workflows", label: "Workflows", icon: Workflow },
   { to: "/ia-assistant", label: "IA Assistant", icon: Bot },
-  { to: "/whatsapp", label: "WhatsApp", icon: MessageCircle },
-  { to: "/emails", label: "Emails", icon: Mail },
   { to: "/statistiques", label: "Statistiques", icon: BarChart3 },
   { to: "/parametres", label: "Paramètres", icon: Settings },
 ];
