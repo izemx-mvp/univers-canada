@@ -62,18 +62,6 @@ export function AppSidebar() {
         })}
       </nav>
 
-      <div className="p-4 m-3 rounded-xl bg-gradient-to-br from-primary/20 to-primary-dark/30 border border-white/10">
-        <div className="flex items-center gap-2 mb-2">
-          <Sparkles className="w-4 h-4 text-white" />
-          <div className="text-xs font-semibold text-white">Plan Premium</div>
-        </div>
-        <p className="text-[11px] text-sidebar-foreground/70 leading-relaxed mb-3">
-          IA, OCR, WhatsApp & sync calendrier illimités.
-        </p>
-        <button className="w-full text-xs font-medium bg-white text-primary py-1.5 rounded-md hover:bg-white/90 transition">
-          Gérer l'abonnement
-        </button>
-      </div>
     </aside>
   );
 }
