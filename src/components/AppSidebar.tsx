@@ -14,8 +14,6 @@ const nav = [
   { to: "/facturation", label: "Facturation", icon: Receipt },
   { to: "/workflows", label: "Workflows", icon: Workflow },
   { to: "/ia-assistant", label: "IA Assistant", icon: Bot },
-  { to: "/whatsapp", label: "WhatsApp", icon: MessageCircle },
-  { to: "/emails", label: "Emails", icon: Mail },
   { to: "/statistiques", label: "Statistiques", icon: BarChart3 },
   { to: "/parametres", label: "Paramètres", icon: Settings },
 ];
