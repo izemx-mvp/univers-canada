@@ -31,10 +31,10 @@ export function Topbar({ title, subtitle }: { title: string; subtitle?: string }
 
       <div className="flex items-center gap-2 pl-2 border-l border-border">
         <div className="w-9 h-9 rounded-full canada-gradient text-white flex items-center justify-center text-xs font-bold">
-          KB
+          NF
         </div>
         <div className="hidden lg:block">
-          <div className="text-sm font-medium leading-tight">Karim Benali</div>
+          <div className="text-sm font-medium leading-tight">Nadia Fathallah</div>
           <div className="text-[10px] text-muted-foreground">Conseiller senior</div>
         </div>
       </div>
